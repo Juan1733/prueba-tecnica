@@ -4,18 +4,7 @@ import { AppService } from './app.service';
 import {TypeOrmModule} from '@nestjs/typeorm'; 
 
 @Module({
-  imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'cars',
-      synchronize: true,
-      logging: true,
-    }),
-  ],
+  imports: [],
   controllers: [AppController],
   providers: [AppService],
 })

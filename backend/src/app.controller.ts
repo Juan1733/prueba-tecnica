@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller('/cars')
@@ -11,8 +11,8 @@ export class AppController {
   }
 
   @Post()
-  addCar() {
-    return this.appService.addCar();
+  addCar(@Body() car: any) {
+    return this.appService.addCar(car);
   }
 
   @Delete('/:id')

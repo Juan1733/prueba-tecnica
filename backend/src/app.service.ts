@@ -7,7 +7,7 @@ export class AppService {
     return 'Cars returned!';
   }
 
-  addCar() {
+  addCar(car: any) {
     return 'Car added!';
   }
 

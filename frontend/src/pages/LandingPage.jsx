@@ -10,9 +10,9 @@ export default function LandingPage() {
 
     return(
         
-        <div>
+        <div className='container row'>
             <Navbar />
-            <h1>Carros</h1>
+            <h2 className='mt-2'>Carros</h2>
         </div>              
               
     )
