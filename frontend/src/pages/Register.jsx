@@ -7,7 +7,7 @@ export default function Register() {
     const registerCar = () => {
        let car = verifyData();
 
-       axios.post('http://localhost:3001/cars', car)
+       axios.post('http://localhost:3000/cars', car)
        .then((response) => {
            console.log(response);
        })
@@ -41,33 +41,35 @@ export default function Register() {
     }
 
     return (
-        <div className="container">
+        <div style={{height: '100vh'}}>
             <Navbar />
-            <form className="row g-3 mt-4">
-            <div className="col-md-6">
-                <label className="form-label">Marca</label>
-                <input type="text" className="form-control" id="inputBrand"/>
-            </div>
-            <div className="col-md-6">
-                <label className="form-label">Modelo</label>
-                <input type="text" className="form-control" id="inputModel"/>
-            </div>
-            <div className="col-md-6">
-                <label className="form-label">Año</label>
-                <input type="text" className="form-control" id="inputYear"/>
-            </div>
-            <div className="col-md-6">
-                <label className="form-label">Precio</label>
-                <input type="text" className="form-control" id="inputPrice"/>
-            </div>
-            <div class="col-12">
-                <label class="form-label">Descripcion</label>
-                <input type="text" className="form-control" id="inputDescription"/>
-            </div>
-            <div className="col-12">
-                <button type="submit" className="btn btn-primary" onClick={registerCar}>Registrar</button>
-            </div>
-        </form>
+            <div className="container">
+                <form className="row g-3 mt-5">
+                    <div className="col-md-6">
+                        <label className="form-label">Marca</label>
+                        <input type="text" className="form-control" id="inputBrand"/>
+                    </div>
+                    <div className="col-md-6">
+                        <label className="form-label">Modelo</label>
+                        <input type="text" className="form-control" id="inputModel"/>
+                    </div>
+                    <div className="col-md-6">
+                        <label className="form-label">Año</label>
+                        <input type="text" className="form-control" id="inputYear"/>
+                    </div>
+                    <div className="col-md-6">
+                        <label className="form-label">Precio</label>
+                        <input type="text" className="form-control" id="inputPrice"/>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Descripcion</label>
+                        <input type="text" className="form-control" id="inputDescription"/>
+                    </div>
+                    <div className="col-12">
+                        <button type="submit" className="btn btn-primary" onClick={registerCar}>Registrar</button>
+                    </div>
+                </form>
+            </div>            
         </div>
         
     )
