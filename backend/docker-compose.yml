@@ -4,12 +4,28 @@ services:
   database:
     image: postgres:13
     environment:
-      - POSTGRES_DB=my_db
-      - POSTGRES_USER=juan
-      - POSTGRES_PASSWORD=postgres      
+      POSTGRES_DB: my_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - '5432:5432'
     volumes:
-      - postgres_data:/var/lib/postgresql
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - database
+    environment:
+      DATABASE_HOST: database
+      DATABASE_PORT: 5432
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: my_db
+
 volumes:
-  postgres_data:     
+  postgres_data:
