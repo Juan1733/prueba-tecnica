@@ -24,9 +24,25 @@ export default function LandingPage() {
 
     return(
         
-        <div style={{height: '100vh'}}>
+        <div style={{height: '100vh', backgroundColor: 'lightgray'}}>
             <Navbar />
             <h3 className='mt-4'>Carros Disponibles</h3>
+            <div className='container-fluid row justify-content-center'>
+                <Card 
+                    brand='Chevrolet'
+                    model='Spark'
+                    year='2021'
+                    price='10000'
+                    description='Carro pequeño'
+                />
+                <Card 
+                    brand='Toyota'
+                    model='corolla'
+                    year='2020'
+                    price='3000'
+                    description='Carro sedan'
+                />
+            </div>
         </div>              
               
     )

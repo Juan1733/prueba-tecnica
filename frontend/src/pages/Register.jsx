@@ -41,7 +41,7 @@ export default function Register() {
     }
 
     return (
-        <div style={{height: '100vh'}}>
+        <div style={{height: '100vh', backgroundColor: 'lightgray'}}>
             <Navbar />
             <div className="container">
                 <form className="row g-3 mt-5">
